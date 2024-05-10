@@ -108,12 +108,6 @@ public class IndexController {
 	// 格式转化导入
 	DefaultConversionService service = new DefaultConversionService();
 
-	@RequestMapping("qew")
-	public String qew(){
-
-		System.err.println("qw4e5561qwe");
-		return "hello!";
-	}
 
 	@RequestMapping("index")
 	public String index(HttpServletRequest req,Model model) {
