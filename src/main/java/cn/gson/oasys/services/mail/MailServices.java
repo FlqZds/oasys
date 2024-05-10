@@ -1,35 +1,18 @@
 package cn.gson.oasys.services.mail;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Properties;
-import java.util.StringTokenizer;
-import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.annotation.PostConstruct;
-import javax.mail.BodyPart;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-import javax.transaction.Transactional;
-
+import cn.gson.oasys.model.dao.maildao.InMailDao;
+import cn.gson.oasys.model.dao.maildao.MailnumberDao;
+import cn.gson.oasys.model.dao.maildao.MailreciverDao;
+import cn.gson.oasys.model.dao.system.StatusDao;
+import cn.gson.oasys.model.dao.system.TypeDao;
+import cn.gson.oasys.model.entity.mail.Inmaillist;
+import cn.gson.oasys.model.entity.mail.Mailnumber;
+import cn.gson.oasys.model.entity.mail.Pagemail;
+import cn.gson.oasys.model.entity.note.Attachment;
+import cn.gson.oasys.model.entity.system.SystemStatusList;
+import cn.gson.oasys.model.entity.system.SystemTypeList;
+import cn.gson.oasys.model.entity.user.User;
+import com.github.pagehelper.util.StringUtil;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -44,21 +27,24 @@ import org.springframework.ui.Model;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.github.pagehelper.util.StringUtil;
-
-import cn.gson.oasys.model.dao.maildao.InMailDao;
-import cn.gson.oasys.model.dao.maildao.MailnumberDao;
-import cn.gson.oasys.model.dao.maildao.MailreciverDao;
-import cn.gson.oasys.model.dao.notedao.AttachmentDao;
-import cn.gson.oasys.model.dao.system.StatusDao;
-import cn.gson.oasys.model.dao.system.TypeDao;
-import cn.gson.oasys.model.entity.mail.Inmaillist;
-import cn.gson.oasys.model.entity.mail.Mailnumber;
-import cn.gson.oasys.model.entity.mail.Pagemail;
-import cn.gson.oasys.model.entity.note.Attachment;
-import cn.gson.oasys.model.entity.system.SystemStatusList;
-import cn.gson.oasys.model.entity.system.SystemTypeList;
-import cn.gson.oasys.model.entity.user.User;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+import javax.mail.Multipart;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 @Transactional
@@ -423,8 +409,8 @@ public class MailServices {
 			messageBodyPart.setDataHandler(new DataHandler(source));
 			// 添加附件的标题
 			// 这里很重要，通过下面的Base64编码的转换可以保证你的中文附件标题名在发送时不会变成乱码
-			sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();
-			messageBodyPart.setFileName("=?GBK?B?"+ enc.encode(filename.getBytes()) + "?=");
+//			sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();
+//			messageBodyPart.setFileName("=?GBK?B?"+ enc.encode(filename.getBytes()) + "?=");
 			multipart.addBodyPart(messageBodyPart);
 			
 			// 将multipart对象放到message中
