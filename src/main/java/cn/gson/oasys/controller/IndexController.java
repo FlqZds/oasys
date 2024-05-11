@@ -57,7 +57,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/")
+//@RequestMapping("/")
 public class IndexController {
 
 	Logger log = LoggerFactory.getLogger(getClass());
@@ -112,9 +112,9 @@ public class IndexController {
 	@RequestMapping("index")
 	public String index(HttpServletRequest req,Model model) {
 		HttpSession session = req.getSession();
-		if(StringUtils.isEmpty(session.getAttribute("userId"))){
-			return "login/login";
-		}
+//		if(StringUtils.isEmpty(session.getAttribute("userId"))){
+//			return "login/login";
+//		}
 		Long userId = Long.parseLong(session.getAttribute("userId") + "");
 		User user=uDao.findOne(userId);
 		menuService.findMenuSys(req,user);
