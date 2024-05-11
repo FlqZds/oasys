@@ -2,29 +2,29 @@
 	<div class="modal fade"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title">捐赠【OASYS】 </h4>
-				</div>
-				<div class="modal-body" style="text-align: center;">
-					<h4>项目的发展离不开您的支持，请作者喝杯咖啡吧！</h4>
-					<div style="display: inline-block">
-						<h4>支付宝</h4>
-						<img src="http://pic.yupoo.com/felixluo/93036494/9a0646aa.jpeg" alt="zhifubao.jpeg" width="150"  align=center />
-					</div>
-					<div style="display: inline-block;margin: 0px 20px 0 20px;">
-						<h4>微信</h4>
-						<img src="http://pic.yupoo.com/felixluo/66100130/455e5d47.jpeg" alt="weichat.jpeg" width="150"  align=center />
-					</div>
-					<div style="display: inline-block;">
-						<img  src="http://pic.yupoo.com/felixluo/dd33c805/fb3b68c1.jpeg" alt="me.jpeg"  width="150"  align=center />
-					</div>
-					<div style="    display: inline-block;    border-left: 2px solid green;    padding: 10px 5px;">
-						捐赠 <span style="    background-color: #009688;    color: #ffffff;    padding: 0 6px; border-radius: 2px;">9.9元</span>
-						,可获得作者手把手教你本地运行与部署。请扫码加我好友，备注:
-						<span style="    background-color: #009688;    color: #ffffff;    padding: 0 6px; border-radius: 2px;">help</span>
-					</div>
-				</div>
+<#--				<div class="modal-header">-->
+<#--					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<#--					<h4 class="modal-title">捐赠【OASYS】 </h4>-->
+<#--				</div>-->
+<#--				<div class="modal-body" style="text-align: center;">-->
+<#--					<h4>项目的发展离不开您的支持，请作者喝杯咖啡吧！</h4>-->
+<#--					<div style="display: inline-block">-->
+<#--						<h4>支付宝</h4>-->
+<#--						<img src="http://pic.yupoo.com/felixluo/93036494/9a0646aa.jpeg" alt="zhifubao.jpeg" width="150"  align=center />-->
+<#--					</div>-->
+<#--					<div style="display: inline-block;margin: 0px 20px 0 20px;">-->
+<#--						<h4>微信</h4>-->
+<#--						<img src="http://pic.yupoo.com/felixluo/66100130/455e5d47.jpeg" alt="weichat.jpeg" width="150"  align=center />-->
+<#--					</div>-->
+<#--					<div style="display: inline-block;">-->
+<#--						<img  src="http://pic.yupoo.com/felixluo/dd33c805/fb3b68c1.jpeg" alt="me.jpeg"  width="150"  align=center />-->
+<#--					</div>-->
+<#--					<div style="    display: inline-block;    border-left: 2px solid green;    padding: 10px 5px;">-->
+<#--						捐赠 <span style="    background-color: #009688;    color: #ffffff;    padding: 0 6px; border-radius: 2px;">9.9元</span>-->
+<#--						,可获得作者手把手教你本地运行与部署。请扫码加我好友，备注:-->
+<#--						<span style="    background-color: #009688;    color: #ffffff;    padding: 0 6px; border-radius: 2px;">help</span>-->
+<#--					</div>-->
+<#--				</div>-->
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
 				</div>
@@ -38,16 +38,16 @@
 	</ul>
 	<!--右侧导航栏-->
 	<ul class="nav navbar-nav navbar-right moredeep">
-		<li>
-			<a href="javascript:void(0)" class="green-none white" data-toggle="modal" data-target="#myModal">
-				<span class="glyphicon glyphicon glyphicon-jpy">捐赠</span>
-			</a>
-		</li>
-		<li>
-			<a href="https://gitee.com/aaluoxiang/oa_system" target="_blank" class="green-none white">
-				<span class="glyphicon glyphicon-star">Git源码</span>
-			</a>
-		</li>
+<#--		<li>-->
+<#--			<a href="javascript:void(0)" class="green-none white" data-toggle="modal" data-target="#myModal">-->
+<#--				<span class="glyphicon glyphicon glyphicon-jpy">捐赠</span>-->
+<#--			</a>-->
+<#--		</li>-->
+<#--		<li>-->
+<#--			<a href="https://gitee.com/aaluoxiang/oa_system" target="_blank" class="green-none white">-->
+<#--				<span class="glyphicon glyphicon-star">Git源码</span>-->
+<#--			</a>-->
+<#--		</li>-->
 		<li><a href="javascript:changepath('/infromlist');" class="green-none white"><span
 				class="glyphicon glyphicon-bell"></span>
 				<#if notice==0>
